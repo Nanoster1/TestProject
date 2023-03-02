@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  php-server:
+    build: ./Backend
+    container_name: php-server
+    volumes:
+      - ./Backend/src:/var/www/php/Backend
+  php-client:
+    build: ./Frontend
+    container_name: php-client
+    volumes:
+      - ./Frontend/src:/var/www/php/Frontend
+  php-dev:
+    build: ./Dev
+    container_name: php-dev
+    volumes:
+      - ./Backend/src:/var/www/php/Backend:rw
+      - ./Frontend/src:/var/www/php/Frontend:rw
+  nginx:
+    image: nginx:latest
+    container_name: php-nginx
+    ports:
+      - "3000:80"
+      - "3001:443"
+    volumes:
+      - ./Nginx/core:/etc/nginx/conf.d
+      - ./Nginx/logs:/var/log/nginx
+      - ./Frontend/src:/var/www/php/Frontend
+      - ./Backend/src:/var/www/php/Backend
+    

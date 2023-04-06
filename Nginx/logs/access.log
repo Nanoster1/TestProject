@@ -2229,3 +2229,4 @@
 172.18.0.1 - - [06/Apr/2023:10:45:45 +0000] "GET /auth/login HTTP/1.1" 200 5582 "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 Edg/111.0.1661.54"
 172.18.0.1 - - [06/Apr/2023:10:49:30 +0000] "GET /auth/login HTTP/1.1" 200 5706 "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 Edg/111.0.1661.54"
 172.18.0.1 - - [06/Apr/2023:10:49:31 +0000] "GET /basket HTTP/1.1" 200 2518 "http://localhost:3000/auth/login" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 Edg/111.0.1661.54"
+172.18.0.1 - - [06/Apr/2023:10:50:25 +0000] "GET /basket HTTP/1.1" 200 2518 "http://localhost:3000/basket" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 Edg/111.0.1661.54"

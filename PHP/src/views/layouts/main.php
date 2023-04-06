@@ -69,6 +69,13 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
             ]);
         }
 
+        echo Nav::widget([
+            'options' => ['class' => 'navbar-nav'],
+            'items' => [
+                ['label' => 'Корзина 🗑', 'url' => ['/basket']],
+            ]
+        ]);
+
         if (!Yii::$app->user->isGuest && Yii::$app->user->identity['role'] === 'admin') {
             echo Nav::widget([
                 'options' => ['class' => 'navbar-nav'],

@@ -3,8 +3,7 @@ use yii\helpers\Html;
 use yii\captcha\Captcha;
 use yii\widgets\ActiveForm;
 
-$this->title = 'Signup';
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'Регистрация';
 ?>
 <div class="site-signup">
     <h1>

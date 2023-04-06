@@ -3,6 +3,7 @@
  * Файл view-шаблона modules/admin/views/order/index.php
  */
 use app\models\Order;
+use yii\bootstrap5\Button;
 use yii\helpers\Html;
 use yii\grid\GridView;
 

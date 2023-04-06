@@ -1,21 +1,10 @@
 version: '3.8'
 services:
   php-server:
-    build: ./Backend
+    build: ./PHP
     container_name: php-server
     volumes:
-      - ./Backend/src:/var/www/php/Backend
-  php-client:
-    build: ./Frontend
-    container_name: php-client
-    volumes:
-      - ./Frontend/src:/var/www/php/Frontend
-  php-dev:
-    build: ./Dev
-    container_name: php-dev
-    volumes:
-      - ./Backend/src:/var/www/php/Backend:rw
-      - ./Frontend/src:/var/www/php/Frontend:rw
+      - ./PHP/src:/var/www/php
   nginx:
     image: nginx:latest
     container_name: php-nginx
@@ -25,6 +14,15 @@ services:
     volumes:
       - ./Nginx/core:/etc/nginx/conf.d
       - ./Nginx/logs:/var/log/nginx
-      - ./Frontend/src:/var/www/php/Frontend
-      - ./Backend/src:/var/www/php/Backend
+      - ./PHP/src:/var/www/php
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
     

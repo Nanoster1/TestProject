@@ -14,11 +14,8 @@ class PageController extends AppController
      */
     public function actionIndex()
     {
-        // получаем лидеров продаж
         $hitProducts = Product::find()->where(['isHit' => true])->limit(3)->all();
-        // получаем новые товары
         $newProducts = Product::find()->where(['isNew' => true])->limit(3)->all();
-        // получаем товары распродажи
         $saleProducts = Product::find()->where(['isSale' => true])->limit(3)->all();
 
         return $this->render(

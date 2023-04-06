@@ -58,6 +58,12 @@ AppAsset::register($this);
                 ['label' => 'Выйти', 'url' => ['/auth/logout']],
             ],
         ]);
+        echo Nav::widget([
+            'options' => ['class' => 'navbar-nav navbar-right'],
+            'items' => [
+                ['label' => 'На главную', 'url' => ['/page']],
+            ],
+        ]);
         NavBar::end();
         ?>
     </header>

@@ -14,9 +14,6 @@ class Basket extends Model
     const AMOUNT_KEY = 'amount';
 
 
-    /**
-     * Метод добавляет товар в корзину
-     */
     public static function addToBasket(int $id, int $count = 1)
     {
         if ($count < 1) {
@@ -56,9 +53,6 @@ class Basket extends Model
         $session->set(static::SESSION_ID, $basket);
     }
 
-    /**
-     * Метод удаляет товар из корзины
-     */
     public static function removeFromBasket(int $id)
     {
         $session = Yii::$app->session;
@@ -84,9 +78,6 @@ class Basket extends Model
         $session->set(static::SESSION_ID, $basket);
     }
 
-    /**
-     * Метод возвращает содержимое корзины
-     */
     public static function getBasket()
     {
         $session = Yii::$app->session;
@@ -100,9 +91,6 @@ class Basket extends Model
         }
     }
 
-    /**
-     * Метод удаляет все товары из корзины
-     */
     public static function clearBasket()
     {
         $session = Yii::$app->session;
@@ -110,9 +98,6 @@ class Basket extends Model
         $session->set(static::SESSION_ID, []);
     }
 
-    /**
-     * Метод обновляет содержимое корзины
-     */
     public static function updateBasket($data)
     {
         Basket::clearBasket();

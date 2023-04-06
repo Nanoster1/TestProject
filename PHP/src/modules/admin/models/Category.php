@@ -4,20 +4,6 @@ namespace app\modules\admin\models;
 
 use Yii;
 
-/**
- * This is the model class for table "category".
- *
- * @property int $id
- * @property int|null $parentId
- * @property string $name
- * @property string|null $content
- * @property string|null $description
- * @property string|null $image
- *
- * @property Category[] $categories
- * @property Category $parent
- * @property Product[] $products
- */
 class Category extends \yii\db\ActiveRecord
 {
     /**

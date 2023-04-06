@@ -1,7 +1,6 @@
 <?php
 namespace app\controllers;
 
-use yii\helpers\Html;
 use yii\web\Controller;
 
 class AppController extends Controller

@@ -4,14 +4,11 @@ namespace app\modules\admin\behaviors;
 use app\models\User;
 use Yii;
 use yii\base\Behavior;
-use yii\db\ActiveRecord;
 use yii\web\Controller;
 use yii\web\HttpException;
 
 class AuthBehavior extends Behavior
 {
-    // ...
-
     public function events()
     {
         return [

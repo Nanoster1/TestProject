@@ -1,6 +1,5 @@
 <?php
 use yii\helpers\Html;
-use yii\captcha\Captcha;
 use yii\widgets\ActiveForm;
 
 $this->title = 'Регистрация';
@@ -14,9 +13,9 @@ $this->title = 'Регистрация';
         <div class="col-lg-5">
 
             <?php $form = ActiveForm::begin(['id' => 'form-register']); ?>
-            <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
-            <?= $form->field($model, 'address')->textInput() ?>
-            <?= $form->field($model, 'password')->passwordInput() ?>
+            <?= $form->field($model, 'username')->textInput(['autofocus' => true])->label('Имя 🥸') ?>
+            <?= $form->field($model, 'address')->textInput()->label('Адрес 🇷🇺') ?>
+            <?= $form->field($model, 'password')->passwordInput()->label('Пароль 🤫') ?>
             <div class="form-group">
                 <?= Html::submitButton('Зарегаться', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
             </div>

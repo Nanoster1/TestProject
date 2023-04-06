@@ -17,7 +17,7 @@ use yii\helpers\Html;
         <div class="product-image">
             <?=
                 Html::img(
-                    '@web/images/products/large/' . $product['image'],
+                    $product['image'],
                     ['alt' => $product['name']]
                 );
             ?>

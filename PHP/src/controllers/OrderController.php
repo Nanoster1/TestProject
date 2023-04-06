@@ -14,18 +14,12 @@ class OrderController extends AppController
     public function actionCheckout()
     {
         $order = new Order();
-        /*
-         * Если пришли post-данные, загружаем их в модель...
-         */
         if ($order->load(Yii::$app->request->post())) {
-            // ...и проверяем эти данные
             if (!$order->validate()) {
-                // данные не прошли валидацию, отмечаем этот факт
                 Yii::$app->session->setFlash(
                     'checkout-success',
                     false
                 );
-                // сохраняем в сессии введенные пользователем данные
                 Yii::$app->session->setFlash(
                     'checkout-data',
                     [
@@ -55,11 +49,9 @@ class OrderController extends AppController
                     $user = Yii::$app->user->identity;
                     $order['userId'] = $user['id'];
                 }
-                // сохраняем заказ в базу данных
                 $order->insert();
                 $order->addItems($basket);
 
-                // отправляем письмо покупателю
                 $mail = Yii::$app->mailer->compose(
                     'order',
                     ['order' => $order]
@@ -69,15 +61,12 @@ class OrderController extends AppController
                     ->setSubject('Заказ в магазине № ' . $order['id'])
                     ->send();
 
-                // очищаем содержимое корзины
                 Basket::clearBasket();
-                // данные прошли валидацию, заказ успешно сохранен
                 Yii::$app->session->setFlash(
                     'checkout-success',
                     true
                 );
             }
-            // выполняем редирект, чтобы избежать повторной отправки формы
             return $this->refresh();
         }
         return $this->render('checkout', ['order' => $order]);

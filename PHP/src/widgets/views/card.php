@@ -8,7 +8,7 @@ use yii\helpers\Url;
     <div class="product-wrapper text-center">
         <?=
             Html::img(
-                '@web/images/products/medium/' . $product['image'],
+                $product['image'],
                 ['alt' => $product['name'], 'class' => 'img-responsive']
             );
         ?>
@@ -34,17 +34,12 @@ use yii\helpers\Url;
             </button>
         </form>
         <?php
-        if ($product['isNew']) { // новинка?
-            echo Html::img(
-                '@web/images/home/new.png',
-                ['alt' => 'Новинка', 'class' => 'new']
-            );
+        if ($product['isNew']) {
+            echo 'Новинка';
+
         }
-        if ($product['isSale']) { // распродажа?
-            echo Html::img(
-                '@web/images/home/sale.png',
-                ['alt' => 'Распродажа', 'class' => 'sale']
-            );
+        if ($product['isSale']) {
+            echo '<br/> Скидка';
         }
         ?>
     </div>

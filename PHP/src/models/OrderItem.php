@@ -10,9 +10,6 @@ class OrderItem extends ActiveRecord
         return 'order_item';
     }
 
-    /**
-     * Позволяет получить заказ, в который входит этот элемент
-     */
     public function getOrder()
     {
         return Order::findOne($this['orderId']);

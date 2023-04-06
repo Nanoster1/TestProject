@@ -14,11 +14,6 @@ class BasketController extends AppController
 
     public function actionAdd()
     {
-
-        /*
-         * Данные должны приходить методом POST; если это не
-         * так — просто показываем корзину
-         */
         if (!Yii::$app->request->isPost) {
             return $this->redirect(['basket/index']);
         }
@@ -31,8 +26,6 @@ class BasketController extends AppController
             $data['count'] = 1;
         }
 
-        // добавляем товар в корзину и перенаправляем покупателя
-        // на страницу корзины
         Basket::addToBasket($data['id'], $data['count']);
 
         return $this->redirect(['basket/index']);
@@ -52,10 +45,6 @@ class BasketController extends AppController
 
     public function actionUpdate()
     {
-        /*
-         * Данные должны приходить методом POST; если это не
-         * так — просто показываем корзину
-         */
         if (!Yii::$app->request->isPost) {
             return $this->redirect(['basket/index']);
         }

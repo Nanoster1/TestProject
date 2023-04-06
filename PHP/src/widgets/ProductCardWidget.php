@@ -3,9 +3,6 @@ namespace app\widgets;
 
 use yii\base\Widget;
 
-/**
- * Виджет для вывода дерева разделов каталога товаров
- */
 class ProductCardWidget extends Widget
 {
     public $product = null;
